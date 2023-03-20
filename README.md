@@ -1,4 +1,4 @@
-# CargoManagementWEBAPI
+# Cargo Management WEB API
 The RESTful API project that automates the order progress in Cargo Management. It finds the cheapest carrier regarding the order's desi. Therefore, the order is automatically made from that the most eligible company.
 
 ## What were the tools that I used;
