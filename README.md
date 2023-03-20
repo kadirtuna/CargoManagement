@@ -48,12 +48,20 @@ Do not forget to test the project in a Browser with Swagger UI or Postman etc.
 
 - By default, Type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. 
 
-If everything is alright, you should see the documentation and can test "CargoManagement" project. If you have any question, don't hesitate to contact me. 
+If everything is alright, you should see the documentation and can test "CargoManagement" project.  
 
 # Projects Documentation in Swagger UI
 
+The endpoints of Carrier Controller with all CRUD Operations,
 ![Carrier Controller Test](https://github.com/kadirtuna/CargoManagementWEBAPI/blob/master/Images/CargoManagementImage1.jpg)
 
+The endpoints of CarrierConfiguration associated with CarrierId,
+![CarrierConfiguration Controller Test](https://github.com/kadirtuna/CargoManagementWEBAPI/blob/master/Images/CargoManagementImage2.jpg)
+
+The endpoints of Order. All automation to determine the order price has been carrying out inside of the Order controller.,
+![Order Controller Test](https://github.com/kadirtuna/CargoManagementWEBAPI/blob/master/Images/CargoManagementImage3.jpg)
+
+***If you have any question, don't hesitate to contact me.***
 # Authors
 
 - [@kadirtuna](https://github.com/kadirtuna)
