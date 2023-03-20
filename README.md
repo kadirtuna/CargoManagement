@@ -44,7 +44,7 @@ dotnet run
 
 Do not forget to test the project in a Browser with Swagger UI or Postman etc.
 
-## To test it with Swagger UI:
+# Test it with Swagger UI:
 
 - By default, Type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. 
 
