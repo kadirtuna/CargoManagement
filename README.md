@@ -23,4 +23,4 @@ With Visual Studio Code, You should follow these instructions to easily run it;
 ```
 git clone https://github.com/kadirtuna/CargoManagementWEBAPI.git
 ```
-2 - In MSSQL, Execute the Script named "CargoManagementDBScript.sql"
+2 - In MSSQL, Execute the given Sql Script named "CargoManagementDBScript.sql" in the repository, 
