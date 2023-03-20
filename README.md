@@ -24,6 +24,7 @@ With Visual Studio Code, You should follow these instructions to easily run it;
 git clone https://github.com/kadirtuna/CargoManagementWEBAPI.git
 ```
 2 - In MSSQL, Execute the given Sql Script named "CargoManagementDBScript.sql" in the repository, 
+
 3 - Modify the "ConnectionStrings" pair in the "appsettings.json" file under "CargoManagement/Properties" Folder to connect the database, For Example;
 Change the Server value regarding to your database server name like below;
 
