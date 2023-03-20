@@ -50,6 +50,10 @@ Do not forget to test the project in a Browser with Swagger UI or Postman etc.
 
 If everything is alright, you should see the documentation and can test "CargoManagement" project. If you have any question, don't hesitate to contact me. 
 
+# Projects Documentation in Swagger UI
+
+![Carrier Controller Test](https://github.com/kadirtuna/CargoManagementWEBAPI/blob/master/Images/CargoManagementImage1.jpg)
+
 # Authors
 
 - [@kadirtuna](https://github.com/kadirtuna)
