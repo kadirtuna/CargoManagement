@@ -18,4 +18,9 @@ This project was developed with the "Visual Studio 2022" IDE.
 
 With Visual Studio Code, You should follow these instructions to easily run it;
 
-1 - In MSSQL, Execute the Script named "CargoManagementDBScript.sql"
+1 - Clone the project;
+
+```
+git clone https://github.com/kadirtuna/CargoManagementWEBAPI.git
+```
+2 - In MSSQL, Execute the Script named "CargoManagementDBScript.sql"
