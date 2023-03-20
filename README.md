@@ -46,7 +46,7 @@ Do not forget to test the project in a Browser with Swagger UI or Postman etc.
 
 # Test it with Swagger UI:
 
-- By default, Type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. 
+- By default, When the project is running, type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. 
 
 If everything is alright, you should see the documentation and can test "CargoManagement" project.  
 
