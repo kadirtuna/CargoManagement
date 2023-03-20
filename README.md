@@ -51,4 +51,4 @@ If you have any question, don't hesitate to contact me.
 
 # Authors
 
-- @kadirtuna
+- [@kadirtuna](https://github.com/kadirtuna)
