@@ -48,3 +48,7 @@ To test it with Swagger UI:
 - By default, Type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. If everything is alright, you should see the documentation and can test "CargoManagement" project.
 
 If you have any question, don't hesitate to contact me. 
+
+# Authors
+
+- @kadirtuna
