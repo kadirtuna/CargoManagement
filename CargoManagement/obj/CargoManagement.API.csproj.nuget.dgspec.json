@@ -1,0 +1,232 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement\\CargoManagement.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\CargoManagement.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\CargoManagement.BLL.csproj",
+        "projectName": "CargoManagement.BLL",
+        "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\CargoManagement.BLL.csproj",
+        "packagesPath": "C:\\Users\\ka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {
+                "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
+        "projectName": "CargoManagement.DAL",
+        "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
+        "packagesPath": "C:\\Users\\ka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement\\CargoManagement.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement\\CargoManagement.API.csproj",
+        "projectName": "CargoManagement.API",
+        "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement\\CargoManagement.API.csproj",
+        "packagesPath": "C:\\Users\\ka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\CargoManagement.BLL.csproj": {
+                "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.BLL\\CargoManagement.BLL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
