@@ -27,8 +27,24 @@ git clone https://github.com/kadirtuna/CargoManagementWEBAPI.git
 3 - Modify the "ConnectionStrings" pair in the "appsettings.json" file under "CargoManagement/Properties" Folder to connect the database, For Example;
 Change the Server value regarding to your database server name like below;
 
-```sql
+```
 "ConnectionStrings": {
     "Sql": "Server=(localdb)\\trialSchool; initial catalog=CargoManagementDB;Trusted_Connection=True;MultipleActiveResultSets=True;"
   },
 ```
+
+4 - After all, In Terminal of VS Code, Go to the "CargoManagement" Folder in the root directory. Type the command and enter;
+
+```
+dotnet run
+```
+
+5 - Congrutulations! The project is successfully running from now on.
+
+Do not forget to test the project in a Browser with Swagger UI or Postman etc.
+
+To test it with Swagger UI:
+
+- By default, Type the URL "https://localhost:7139/swagger/index.html" in address search bar of the internet browser. If everything is alright, you should see the documentation and can test "CargoManagement" project.
+
+If you have any question, don't hesitate to contact me. 
