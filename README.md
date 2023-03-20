@@ -13,3 +13,9 @@ The RESTful API project that automates the order progress in Cargo Management. I
 
 
 This project was developed with the "Visual Studio 2022" IDE.
+
+## Run
+
+With Visual Studio Code, You should follow these instructions to easily run it;
+
+1 - In MSSQL, Execute the Script named "CargoManagementDBScript.sql"
