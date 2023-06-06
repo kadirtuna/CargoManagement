@@ -1,4 +1,7 @@
-﻿USE [CargoManagementDB]
+CREATE DATABASE CargoManagementDB
+GO
+
+USE [CargoManagementDB]
 GO
 /****** Object:  Table [dbo].[CarrierConfigurations]    Script Date: 6/7/2023 1:35:20 AM ******/
 SET ANSI_NULLS ON
@@ -112,3 +115,4 @@ ALTER TABLE [dbo].[Orders] CHECK CONSTRAINT [FK_Orders_Carriers_CarrierId]
 GO
 
 CREATE DATABASE CargoManagementHangfireDB
+GO
