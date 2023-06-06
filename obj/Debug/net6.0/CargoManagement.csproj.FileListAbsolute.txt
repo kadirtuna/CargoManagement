@@ -1,8 +1,0 @@
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.csproj.AssemblyReference.cache
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.AssemblyInfoInputs.cache
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.AssemblyInfo.cs
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.csproj.CoreCompileInputs.cache
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.RazorAssemblyInfo.cache
-C:\Users\ka\Desktop\Programming Projects\Java , C# Projeleri\CargoManagementProjectWEBAPI\CargoManagement\obj\Debug\net6.0\CargoManagement.RazorAssemblyInfo.cs
