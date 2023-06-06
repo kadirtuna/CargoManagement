@@ -29,9 +29,11 @@ git clone https://github.com/kadirtuna/CargoManagementWEBAPI.git
 3 - Modify the "ConnectionStrings" pair in the "appsettings.json" file under "CargoManagement/Properties" Folder to connect the database, For Example;
 Change the Server value regarding to your database server name like below;
 
+NOTE: Due to hangfire database which is wanted to be used for jobs, is not created automatically. Before using the project, don't forget to create the hangfire sql database manually. Then the project will be able to connect to the hangfire sql database and manages of the creation of the table for using Hangfire.
 ```
 "ConnectionStrings": {
-    "Sql": "Server=(localdb)\\trialSchool; initial catalog=CargoManagementDB;Trusted_Connection=True;MultipleActiveResultSets=True;"
+    "Sql": "Server=localhost; initial catalog=CargoManagementDB;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True",
+    "HangfireSql": "Server=localhost; initial catalog=CargoManagementHangfireDB;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True"
   },
 ```
 
