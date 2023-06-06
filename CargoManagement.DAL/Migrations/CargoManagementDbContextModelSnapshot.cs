@@ -65,6 +65,28 @@ namespace CargoManagement.DAL.Migrations
                     b.ToTable("CarrierConfigurations");
                 });
 
+            modelBuilder.Entity("CargoManagement.DAL.Models.CarrierReports", b =>
+                {
+                    b.Property<int>("CarrierReportId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarrierReportId"));
+
+                    b.Property<decimal>("CarrierCost")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("CarrierId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CarrierReportDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CarrierReportId");
+
+                    b.ToTable("CarrierReports");
+                });
+
             modelBuilder.Entity("CargoManagement.DAL.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")

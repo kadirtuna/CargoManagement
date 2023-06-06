@@ -9,7 +9,7 @@ namespace CargoManagement.DAL.DTO
 {
     public class CarrierDTO
     {
-        public string CarrierName { get; set; }
+        public string CarrierName { get; set; } = string.Empty;
         public bool CarrierIsActive { get; set; }
         public int CarrierPlusDesiCost { get; set; }
     }

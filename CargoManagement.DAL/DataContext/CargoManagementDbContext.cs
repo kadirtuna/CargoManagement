@@ -15,7 +15,8 @@ public partial class CargoManagementDbContext : DbContext
     }
     public DbSet<Carrier> Carriers { get; set; }    
     public DbSet<Order> Orders { get; set; }    
-    public DbSet<CarrierConfiguration> CarrierConfigurations { get; set; }    
+    public DbSet<CarrierConfiguration> CarrierConfigurations { get; set; } 
+    public DbSet<CarrierReports> CarrierReports { get; set; }
     
 
     /*public CargoManagementDbContext()

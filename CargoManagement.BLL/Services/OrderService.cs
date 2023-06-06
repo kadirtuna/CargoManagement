@@ -1,42 +1,38 @@
-﻿using CargoManagement.DAL.DTO;
+﻿using CargoManagement.BLL.Infrastructure;
 using CargoManagement.DAL.DTO.CreateDTO;
 using CargoManagement.DAL.DTO.ReadDTO;
 using CargoManagement.DAL.DTO.UpdateDTO;
 using CargoManagement.DAL.Models;
 using CargoManagement.DAL.Repositories.Contracts;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CargoManagement.API.Properties
+namespace CargoManagement.BLL.Services
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class OrderController : ControllerBase
+    public class OrderService : IOrderService
     {
         public ILogger<Order> _logger { get; set; }
         public IRepository<Carrier> _carrierRepository;
         public IRepository<CarrierConfiguration> _carrierConfigurationRepository;
         public IRepository<Order> _orderRepository;
 
-        public OrderController(ILogger<Order> logger, IRepository<Carrier> carrierRepository, IRepository<CarrierConfiguration> carrierConfigurationRepository, IRepository<Order> orderRepository)
+        public OrderService(ILogger<Order> logger, IRepository<Carrier> carrierRepository, IRepository<CarrierConfiguration> carrierConfigurationRepository, IRepository<Order> orderRepository)
         {
             _logger = logger;
             _carrierRepository = carrierRepository;
             _carrierConfigurationRepository = carrierConfigurationRepository;
             _orderRepository = orderRepository;
         }
-    
-        [HttpGet]
-        public async Task<ActionResult<List<ReadOrderDTO>>> GetOrders()
+
+        public async Task<Tuple<List<ReadOrderDTO>, bool>> GetOrders()
         {
             var orders = await _orderRepository.GetAll();
             List<ReadOrderDTO> listReadOrderDTO = new List<ReadOrderDTO>();
-
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             foreach (Order order in orders)
             {
@@ -45,39 +41,39 @@ namespace CargoManagement.API.Properties
                     OrderId = order.OrderId,
                     CarrierId = order.CarrierId,
                     OrderDesi = order.OrderDesi,
-                    OrderCarrierCost = order.OrderCarrierCost
+                    OrderCarrierCost = order.OrderCarrierCost,
+                    OrderDate = order.OrderDate,
                 };
 
                 listReadOrderDTO.Add(readOrderDTO);
             }
 
-            return Ok(listReadOrderDTO);
+            return Tuple.Create(listReadOrderDTO, true);
         }
 
-        [HttpGet("{orderId:int}/")]
-        public async Task<ActionResult<ReadOrderDTO>> GetOrder(int orderId)
+        public async Task<Tuple<ReadOrderDTO, bool>> GetOrder(int orderId)
         {
             var order = await _orderRepository.GetById(orderId);
             ReadOrderDTO readOrderDTO = new ReadOrderDTO();
 
             if (order == null)
-                return NotFound("Any Order couldn't be found by given OrderId!");
+                return Tuple.Create(new ReadOrderDTO(), false);
 
             readOrderDTO.OrderId = order.OrderId;
             readOrderDTO.CarrierId = order.CarrierId;
             readOrderDTO.OrderDesi = order.OrderDesi;
             readOrderDTO.OrderCarrierCost = order.OrderCarrierCost;
+            readOrderDTO.OrderDate = order.OrderDate;
 
-            return Ok(readOrderDTO);
+            return Tuple.Create(readOrderDTO, true);
         }
 
-        [HttpPut("{orderId:int}")]
-        public async Task<ActionResult<string>> PutOrder(int orderId, UpdateOrderDTO updateOrderDTO)
+        public async Task<Tuple<string, bool>> PutOrder(int orderId, UpdateOrderDTO updateOrderDTO)
         {
             var order = await _orderRepository.GetById(orderId);
-            
+
             if (order == null)
-                return NotFound("Any Order couldn't be found by given OrderId!");
+                return Tuple.Create("Any Order couldn't be found by given OrderId!", false);
 
             order.CarrierId = updateOrderDTO.CarrierId;
             order.OrderDesi = updateOrderDTO.OrderDesi;
@@ -86,13 +82,14 @@ namespace CargoManagement.API.Properties
             await _orderRepository.Update(order);
             await _orderRepository.CommitAsync();
 
-            return Ok(String.Format("The Order with the OrderId: {0} has been successfully updated!", orderId)); 
+            return Tuple.Create(String.Format("The Order with the OrderId: {0} has been successfully updated!", orderId), true);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<string>> PostOrder(CreateOrderDTO createOrderDTO)
+        public async Task<Tuple<string, bool>> PostOrder(CreateOrderDTO createOrderDTO)
         {
             var carrierConfigurations = await _carrierConfigurationRepository.GetAll();
+            var carriers = await _carrierRepository.GetAll();
+
             Decimal cheapestPrice = Decimal.MaxValue;
             Decimal orderPrice = Decimal.MaxValue;
             int cheapestCarrierId = -1;
@@ -102,21 +99,26 @@ namespace CargoManagement.API.Properties
             Order newOrder = new Order();
 
             if (carrierConfigurations == null)
-                return NotFound("There is not any registered Carrier in the system!");
+                return Tuple.Create("There is not any registered Carrier in the system!", false);
 
             foreach (CarrierConfiguration carrierConfiguration in carrierConfigurations) //Determining the cheapestCarrier for the order. Subsequently, The order will be associated with that Carrier.
             {
                 Decimal localOrderPrice = decimal.MaxValue;
-                dataOfMaxDesiOfCarriers.Add(carrierConfiguration.CarrierId, carrierConfiguration.CarrierMaxDesi);
+                var carrier= carriers.Where<Carrier>(p => p.CarrierId == carrierConfiguration.CarrierId).LastOrDefault();
 
-                if (createOrderDTO.OrderDesi >= carrierConfiguration.CarrierMinDesi && createOrderDTO.OrderDesi <= carrierConfiguration.CarrierMaxDesi)
+                if (carrier != null && carrier.CarrierIsActive == true)
                 {
-                    localOrderPrice = carrierConfiguration.CarrierCost;
+                    dataOfMaxDesiOfCarriers.Add(carrierConfiguration.CarrierId, carrierConfiguration.CarrierMaxDesi);
 
-                    if (localOrderPrice < cheapestPrice)
+                    if (createOrderDTO.OrderDesi >= carrierConfiguration.CarrierMinDesi && createOrderDTO.OrderDesi <= carrierConfiguration.CarrierMaxDesi)
                     {
-                        cheapestPrice = localOrderPrice;
-                        cheapestCarrierId = carrierConfiguration.CarrierId; 
+                        localOrderPrice = carrierConfiguration.CarrierCost;
+
+                        if (localOrderPrice < cheapestPrice)
+                        {
+                            cheapestPrice = localOrderPrice;
+                            cheapestCarrierId = carrierConfiguration.CarrierId;
+                        }
                     }
                 }
             }
@@ -130,7 +132,8 @@ namespace CargoManagement.API.Properties
                 {
                     int desiDifference = Math.Abs(dataOfmaxDesiOfCarrier.Value - createOrderDTO.OrderDesi);
 
-                    if (desiDifference < lowestDesiDifference) {
+                    if (desiDifference < lowestDesiDifference)
+                    {
                         lowestDesiDifference = desiDifference;
                         carrierIdAtLowestDesiDifference = dataOfmaxDesiOfCarrier.Key;
                     }
@@ -150,21 +153,20 @@ namespace CargoManagement.API.Properties
             await _orderRepository.Insert(newOrder);
             await _orderRepository.CommitAsync();
 
-            return Ok("The new Order has been successfully added!");
+            return Tuple.Create("The new Order has been successfully added!", true);
         }
 
-        [HttpDelete("{orderId:int}")]
-        public async Task<ActionResult<string>> DeleteOrder(int orderId)
+        public async Task<Tuple<string, bool>> DeleteOrder(int orderId)
         {
             var order = await _orderRepository.GetById(orderId);
 
             if (order == null)
-                return NotFound("Any Order couldn't be found by given OrderId!");
-            
+                return Tuple.Create("Any Order couldn't be found by given OrderId!", false);
+
             await _orderRepository.Delete(order);
             await _orderRepository.CommitAsync();
 
-            return Ok(String.Format("The Order with OrderId: {0} has been successfully deleted!", orderId));
+            return Tuple.Create(String.Format("The Order with OrderId: {0} has been successfully deleted!", orderId), true);
         }
     }
 }

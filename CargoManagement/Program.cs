@@ -1,8 +1,11 @@
+using CargoManagement.API.Jobs;
+using CargoManagement.BLL.Infrastructure;
+using CargoManagement.BLL.Services;
 using CargoManagement.DAL.DataContext;
 using CargoManagement.DAL.Models;
 using CargoManagement.DAL.Repositories;
 using CargoManagement.DAL.Repositories.Contracts;
-
+using Hangfire;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +23,19 @@ builder.Services.AddDbContext<CargoManagementDbContext>(options => {
     });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ICarrierConfigurationService, CarrierConfigurationService>();
+builder.Services.AddScoped<ICarrierService, CarrierService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<ICarrierReportsService, CarrierReportsService>();
 
+var hangfireConnectionString = builder.Configuration.GetConnectionString("HangfireSql");
+builder.Services.AddHangfire(x =>
+{
+    x.UseSqlServerStorage(hangfireConnectionString);
+    RecurringJob.AddOrUpdate<Job>(j => j.TotalFees(), "0 * * * *"); //It is triggered per hour
+});
+
+builder.Services.AddHangfireServer();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +48,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseHangfireDashboard();
 
 app.MapControllers();
 

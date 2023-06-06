@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\Enoca\\Tasks\\Task7\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\Enoca\\Tasks\\Task7\\CargoManagement.DAL\\CargoManagement.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Enoca\\Tasks\\Task7\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
         "projectName": "CargoManagement.DAL",
-        "projectPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
-        "packagesPath": "C:\\Users\\ka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ka\\Desktop\\Programming Projects\\Java , C# Projeleri\\CargoManagementProjectWEBAPI\\CargoManagement\\CargoManagement.DAL\\obj\\",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\Enoca\\Tasks\\Task7\\CargoManagement.DAL\\CargoManagement.DAL.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\Enoca\\Tasks\\Task7\\CargoManagement.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +65,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

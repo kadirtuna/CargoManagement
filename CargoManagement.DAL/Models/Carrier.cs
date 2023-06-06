@@ -15,7 +15,7 @@ namespace CargoManagement.DAL.Models
 
         [Required]
         [StringLength(50)]
-        public string CarrierName { get; set; }
+        public string CarrierName { get; set; } = string.Empty;
 
         [Required]
         public bool CarrierIsActive { get; set; }

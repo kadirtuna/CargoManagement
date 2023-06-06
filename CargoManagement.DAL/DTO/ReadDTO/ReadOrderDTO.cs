@@ -12,5 +12,6 @@ namespace CargoManagement.DAL.DTO.ReadDTO
         public int CarrierId { get; set; }
         public int OrderDesi { get; set; }
         public decimal OrderCarrierCost { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }
