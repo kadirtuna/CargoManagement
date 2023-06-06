@@ -7,6 +7,7 @@ The RESTful API project that automates the order progress in Cargo Management. I
 - Swagger UI,
 - Entity Framework Core - Code First Migration,
 - ASP.NET WEB API,
+- Hangfire Cron Jobs,
 - Repository Design Pattern,
 - Three Layered Architecture,
 - Async Programming,
