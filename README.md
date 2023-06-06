@@ -35,15 +35,17 @@ Change the Server value regarding to your database server name like below;
     "HangfireSql": "Server=localhost; initial catalog=CargoManagementHangfireDB;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True"
   },
 ```
-NOTE: Due to hangfire database which is wanted to be used for jobs, is not created automatically. Before using the project, don't forget to create the hangfire sql database manually. Then the project will be able to connect to the hangfire sql database and manages of the creation of the table for using Hangfire.
+NOTE: Due to hangfire database which is wanted to be used for jobs, is not created automatically. So before using the project, don't forget to create the hangfire sql database manually. Then the project will be able to connect to the hangfire sql database and manages of the creation of the table for using Hangfire.
 
-4 - After all, In Terminal of VS Code, Go to the "CargoManagement" Folder in the root directory. Type the command and enter;
+4 - Create CargoManagementDB with migration or using "Script_CargoManagementDB.sql" file. To easily perform together with CargoManagementHangfireDB, For instance  open "Script_CargoManagementDB.sql" file and copy the code then go to MSSQL Query Window, paste the code and run. The CargoManagementDB with some sample data and CargoManagementHangfireDB will be produced.
+
+5 - After all, In Terminal of VS Code, Go to the "CargoManagement" Folder in the root directory. Type the command and enter;
 
 ```
 dotnet run
 ```
 
-5 - Congrutulations! The project is successfully running from now on.
+6 - Congrutulations! The project is successfully running from now on.
 
 Do not forget to test the project in a Browser with Swagger UI or Postman etc.
 
